@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Quality Data</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif; /* Apply Lexend font to the entire document */
+      margin: 0;
+      padding: 0;
+      background-color: #025157; /* Sets the background color */
+      color:#ffffff; 
+    }
+    .container {
+      display: flex;
+      width: 90%;
+      margin: 20px auto; /* Center container with margin */
+      margin-top: 50px;
+    }
+    .left-column {
+      flex: 1;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+    .center-column {
+      flex: 1;
+      padding: 0 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+    }
+    .right-column {
+      flex: 1;
+      padding-left: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+    }
+    .color-scale-container {
+      display: flex;
+      flex-direction: column; /* Stack title, scale, and description vertically */
+      margin-bottom: 15px;
+    }
+    .color-scale-title {
+      font-weight: bold;
+      font-size: 1.2em; /* Larger font for the title */
+      margin-bottom: 25px; /* Space between title and color scale */
+      color:#0097a9; 
+    }
+    .color-scale {
+      width: 300px; /* Adjust width as needed */
+      height: 25px;
+      background: linear-gradient(to left, #d15e14,#f1c232ff,#61ba7e);
+      position: relative;
+      margin-bottom: 25px; /* Adjust spacing below the color scale */
+    }
+    .color-scale-labels {
+        display: flex;
+        justify-content: space-between; /* Space out labels evenly */
+        width: 100%; /* Make sure the labels span the width of the color scale */
+        font-size: 0.8em; /* Set font size for the labels */
+        margin-top: 5px; /* Space between color scale and labels */
+    }
+    .marker {
+      width: 2px;
+      height: 22.5px;
+      background: #ffffff;
+      position: absolute;
+      top: 0;
+    }
+    .marker-label {
+      position: absolute;
+      top: -25px;
+      left: -10px;
+      padding: 2px 5px;
+    }
+    .color-scale-description {
+      font-size: 0.9em; /* Smaller font for the description */
+    }
+    #property-container {
+      margin-bottom: 15px;
+    }
+    .metric-description {
+        font-size: 0.8em; /* Smaller font for the description */
+        margin-bottom: 40px;
+    }
+    h1 {
+    color: #0097a9; /* Change this to your desired color */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <h1>Water Quality Data</h1>
+      <div id="property-container"></div>
+    </div>
+    <div class="center-column" id="color-scales-container">
+      <!-- Color scales will be dynamically added here -->
+    </div>
+    <div class="right-column" id="metrics-info-container">
+      <!-- Metric titles and descriptions will be dynamically added here -->
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
