@@ -44,22 +44,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const colorScale = document.createElement('div');
         colorScale.className = 'color-scale';
   
-        // Determine marker position based on thresholds
-        const scaleWidth = 300; // Width of the color scale in pixels
-        const positionFromRed = (redThreshold / 100) * scaleWidth;
-        const positionFromYellow = (yellowThreshold / 100) * scaleWidth;
-        const positionFromGreen = (greenThreshold / 100) * scaleWidth;
-  
+        // Determine marker position based on the ratio of column 4 (markedValue) to column 1 (redThreshold)
+      const scaleWidth = 300; // Width of the color scale in pixels
+      const markerPosition = (markedValue / redThreshold) * scaleWidth;
+
         const marker = document.createElement('div');
         marker.className = 'marker';
-        marker.style.left = `${markedValue}px`; // Adjusted to be in pixels
-  
+        marker.style.right = `${markerPosition}px`; // Set marker position based on the calculated value
+        
         const markerLabel = document.createElement('div');
         markerLabel.className = 'marker-label';
         markerLabel.textContent = markedValue;
+        markerLabel.style.right = `${markerPosition}px`;
   
         colorScale.appendChild(marker);
         colorScale.appendChild(markerLabel);
+
+        // Create and append tick marks
+        const redTick = document.createElement('div');
+        redTick.className = 'tick-mark';
+        redTick.style.left = '0px';
+
+        const greenTick = document.createElement('div');
+        greenTick.className = 'tick-mark';
+        greenTick.style.left = `${scaleWidth}px`;
+
+        const redLabel = document.createElement('div');
+        redLabel.className = 'red-label'; 
+        redLabel.textContent = redThreshold; 
+        redLabel.style.left = redTick.style.left;
+
+        const greenLabel = document.createElement('div');
+        greenLabel.className = 'green-label';
+        greenLabel.textContent = greenThreshold; 
+        greenLabel.style.left = greenTick.style.left;
+
+        colorScale.appendChild(redTick);
+        colorScale.appendChild(greenTick);
+        colorScale.appendChild(redLabel);
+        colorScale.appendChild(greenLabel); 
   
         colorScaleContainer.appendChild(colorScaleTitle);
         colorScaleContainer.appendChild(colorScale);

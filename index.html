@@ -47,15 +47,15 @@
     .color-scale-title {
       font-weight: bold;
       font-size: 1.2em; /* Larger font for the title */
-      margin-bottom: 25px; /* Space between title and color scale */
+      margin-bottom: 15px; /* Space between title and color scale */
       color:#0097a9; 
     }
     .color-scale {
       width: 300px; /* Adjust width as needed */
       height: 25px;
-      background: linear-gradient(to left, #d15e14,#f1c232ff,#61ba7e);
+      background: linear-gradient(to right, #d15e14,#f1c232ff,#61ba7e);
       position: relative;
-      margin-bottom: 25px; /* Adjust spacing below the color scale */
+      margin-bottom: 33px; /* Adjust spacing below the color scale */
     }
     .color-scale-labels {
         display: flex;
@@ -74,8 +74,8 @@
     .marker-label {
       position: absolute;
       top: -25px;
-      left: -10px;
-      padding: 2px 5px;
+      /*left: -30px;*/ 
+      /*padding: 2px 5px;*/
     }
     .color-scale-description {
       font-size: 0.9em; /* Smaller font for the description */
@@ -88,9 +88,29 @@
         margin-bottom: 40px;
     }
     h1 {
-    color: #0097a9; /* Change this to your desired color */
+        color: #0097a9; /* Change this to your desired color */
     }
-
+    .tick-mark {
+        width: 2px;
+        height: 10px;
+        background: #0097a9;
+        position: absolute;
+        top: 25px; /* Adjust to position below the color scale */
+    }
+    .red-label {
+        position: absolute;
+        top: 35px; 
+        left: -5px; 
+        font-size: 0.8em; 
+        color:#0097a9; 
+    }
+    .green-label {
+        position: absolute;
+        top: 35px; 
+        left: 40px; 
+        font-size: 0.8em; 
+        color:#0097a9; 
+    }
   </style>
 </head>
 <body>
